@@ -44,7 +44,7 @@ erDiagram
         date report_date
         text content
     }
-WITH project_hours AS (
+```WITH project_hours AS (
     -- 1. Считаем сумму часов для каждого проекта
     SELECT 
         p.project_id,
