@@ -1,4 +1,4 @@
--- 1. Таблица сотрудников
+--- 1. Таблица сотрудников
 CREATE TABLE employees (
     employee_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE time_logs (
     CONSTRAINT fk_log_task FOREIGN KEY (task_id) REFERENCES tasks(task_id) ON DELETE CASCADE
 );
 
--- 5. Таблица отчетов
+-- 5. Таблица отчетов (результатов)
 CREATE TABLE reports (
     report_id SERIAL PRIMARY KEY,
     project_id INT NOT NULL,
