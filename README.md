@@ -1,6 +1,6 @@
 # db-time-tracking
 
-### ER-схема базы данных
+### 4. ER-схема базы данных
 ```mermaid
 erDiagram
     EMPLOYEES ||--o{ TASKS : "выполняет"
