@@ -1,4 +1,4 @@
---- 1. Таблица сотрудников
+-- 1. Таблица сотрудников
 CREATE TABLE employees (
     employee_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE projects (
     start_date DATE NOT NULL
 );
 
--- 3. Таблица задач (связана с проектами и сотрудниками)
+-- 3. Таблица задач
 CREATE TABLE tasks (
     task_id SERIAL PRIMARY KEY,
     project_id INT NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE tasks (
     CONSTRAINT fk_task_employee FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE SET NULL
 );
 
--- 4. Таблица отметок времени (учет работы)
+-- 4. Таблица отметок времени
 CREATE TABLE time_logs (
     log_id SERIAL PRIMARY KEY,
     employee_id INT NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE time_logs (
     CONSTRAINT fk_log_task FOREIGN KEY (task_id) REFERENCES tasks(task_id) ON DELETE CASCADE
 );
 
--- 5. Таблица отчетов (результатов)
+-- 5. Таблица отчетов
 CREATE TABLE reports (
     report_id SERIAL PRIMARY KEY,
     project_id INT NOT NULL,
